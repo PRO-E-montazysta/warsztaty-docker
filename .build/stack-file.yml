@@ -1,8 +1,29 @@
 version: '3'
 services:
-  backend:
-    image: registry.emontazysta.pl/admin/test-backend:latest
+  db:
+    container_name: postgres
+    image: postgres:14.1-alpine
+    environment:
+      - POSTGRES_DB:postgres
+    ports:
+      - '5432:5432'
+    deploy:
+      mode: replicated
+      replicas: 2
+  frontend:
+    image: registry.emontazysta.pl/emontazysta/frontend:latest
+    ports:
+      - "80:80"
+    deploy:
+      mode: replicated
+      replicas: 2
+  backend: 
     container_name: backend
+    image: registry.emontazysta.pl/emontazysta/warsztaty-docker:master
+    ports:
+      - "8080:8080"
+    depends_on: 
+      - db
     networks:
       - utils_utils
       
