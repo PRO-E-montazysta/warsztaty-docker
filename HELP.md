@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'pl.emotnazysta.warsztaty-docker' is invalid and this project uses 'pl.emotnazysta.warsztatydocker' instead.
+* The original package name 'pl.emontazysta.warsztaty-docker' is invalid and this project uses 'pl.emontazysta.warsztatydocker' instead.
 
 # Getting Started
 

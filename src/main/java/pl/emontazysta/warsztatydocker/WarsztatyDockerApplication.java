@@ -1,4 +1,4 @@
-package pl.emotnazysta.warsztatydocker;
+package pl.emontazysta.warsztatydocker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
