@@ -7,27 +7,17 @@ services:
       - POSTGRES_PASSWORD=password
     ports:
       - '<nr-indeksu>:5432'
-    deploy:
-      mode: replicated
-      replicas: 1
   frontend:
     image: registry.emontazysta.pl/emontazysta/frontend:latest
     ports:
       - "<nr-indeksu>:80"
-    deploy:
-      mode: replicated
-      replicas: 2
   backend: 
     image: registry.emontazysta.pl/emontazysta/warsztaty-docker:master
     ports:
       - "<nr-indeksu>:8080"
     depends_on: 
       - db
-    deploy:
-      mode: replicated
-      replicas: 2
-
-      
+     
 networks:
   utils_utils:
     external: true
