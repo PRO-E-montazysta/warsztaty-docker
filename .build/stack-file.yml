@@ -1,15 +1,15 @@
 version: '3'
 services:
   db:
-    container_name: postgres
     image: postgres:14.1-alpine
     environment:
       - POSTGRES_DB:postgres
+      - POSTGRES_PASSWORD=password
     ports:
       - '5432:5432'
     deploy:
       mode: replicated
-      replicas: 2
+      replicas: 1
   frontend:
     image: registry.emontazysta.pl/emontazysta/frontend:latest
     ports:
@@ -18,12 +18,14 @@ services:
       mode: replicated
       replicas: 2
   backend: 
-    container_name: backend
     image: registry.emontazysta.pl/emontazysta/warsztaty-docker:master
     ports:
       - "8080:8080"
     depends_on: 
       - db
+    deploy:
+      mode: replicated
+      replicas: 2
     networks:
       - utils_utils
       
