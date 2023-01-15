@@ -7,6 +7,7 @@ Aby wziać czynny udział w warsztatach należy:
   git clone git@github.com:PRO-E-montazysta/warsztaty-docker.git
 2. Utworzyć nowy branch (najlepiej by nazwa brancha była taka sama jak twój numer indeksu) i się na niego zcheckoutować komendą: 
   git checkout -b <nazwa_brancha>
+2.a. Opcjonalnie wprowadzić jakieś zmiany w aplikacji, dla chętnych można nawet podgrać coś własnego, będzie tylko trzeba zmienić ostatnią linijkę w Dockerfile. 
 3. Wypushować swojego brancha do repozytorium zdalnego:
   git push <nazwa brancha> <nazwa brancha>
   
